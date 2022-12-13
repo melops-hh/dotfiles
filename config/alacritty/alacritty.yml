@@ -1,0 +1,198 @@
+env:
+  TERM: xterm-256color
+
+selection:
+  save_to_clipboard: true
+
+# Font configuration
+font:
+  ## Point size
+  size: 14.0
+  normal:
+    family: MesloLGS NF
+    #family: Fira Code
+    style: Regular
+
+  bold:
+    family: MesloLGS NF
+    style: Bold
+
+  italic:
+    family: MesloLGS NF
+    style: Italic
+ 
+background_rpacity: 1.0
+
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+
+  save_to_clipboard: true
+
+live_config_reload: true
+
+window:
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: true
+  draw_bold_text_with_bright_colors: true
+  startup_mode: Windowed
+
+schemes:
+  # Colors (Gruvbox dark)
+  gruvbox: &gruvbox
+    # Default colors
+    primary:
+      # hard contrast: background = '0x1d2021'
+      background: '0x282828'
+      # soft contrast: background = '0x32302f'
+      foreground: '0xebdbb2'
+  
+    # Normal colors
+    normal:
+      black:   '0x282828'
+      red:     '0xcc241d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0xa89984'
+  
+    # Bright colors
+    bright:
+      black:   '0x928374'
+      red:     '0xfb4934'
+      green:   '0xb8bb26'
+      yellow:  '0xfabd2f'
+      blue:    '0x83a598'
+      magenta: '0xd3869b'
+      cyan:    '0x8ec07c'
+      white:   '0xebdbb2'
+  
+  # Colors (Nord)
+  nord: &nord
+    # Default colors
+    primary:
+      background: '0x2E3440'
+      foreground: '0xD8DEE9'
+  
+    # Normal colors
+    normal:
+      black:   '0x3B4252'
+      red:     '0xBF616A'
+      green:   '0xA3BE8C'
+      yellow:  '0xEBCB8B'
+      blue:    '0x81A1C1'
+      magenta: '0xB48EAD'
+      cyan:    '0x88C0D0'
+      white:   '0xE5E9F0'
+  
+    # Bright colors
+    bright:
+      black:   '0x4C566A'
+      red:     '0xBF616A'
+      green:   '0xA3BE8C'
+      yellow:  '0xEBCB8B'
+      blue:    '0x81A1C1'
+      magenta: '0xB48EAD'
+      cyan:    '0x8FBCBB'
+      white:   '0xECEFF4'
+  
+  # Colors (Tokyo Night)
+  tokyo-night: &tokyo-night
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xa9b1d6'
+  
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x787c99'
+  
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+  
+  
+  # Colors (Tokyo Night Storm)
+  tokyo-night-storm: &tokyo-night-storm
+    primary:
+      background: '0x24283b'
+      foreground: '0xa9b1d6'
+  
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x9699a8'
+  
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+  # Colors (One Dark)
+  one_dark: &one_dark
+  # Default colors
+    primary:
+      foreground: '0xabb2bf'
+      background: '0x282c34'
+  
+    # Cursor colors
+    cursor:
+      text: '0x2c323c'
+      cursor: '0x5c6370'
+  
+    # Selection colors
+    selection:
+      text: CellForeground
+      background: '0x3e4452'
+  
+    # Normal colors
+    normal:
+      black:   '0x2c323c'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xe5c07b'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0x5c6370'
+
+  # Bright colors
+  bright:
+    black:   '0x3e4452'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xe5c07b'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
+
+colors: *one_dark
