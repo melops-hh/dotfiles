@@ -47,7 +47,7 @@ map("n", "<leader>e", vim.diagnostic.open_float)
 map("n", "<leader>q", vim.diagnostic.setloclist)
 
 -- open netrw file explorer in a verticall split
-map("n", "<c-b>", ":Lexplore<CR>")
+-- map("n", "<c-b>", ":Lexplore<CR>")
 
 -- undo break points
 map("i", ",", ",<c-g>u", { noremap = true })

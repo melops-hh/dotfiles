@@ -103,6 +103,19 @@ packer.startup(function(use)
         end
     })
     use("theprimeagen/harpoon")
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+    }
+    use("nathom/filetype.nvim")
+    use("lewis6991/impatient.nvim")
+    use({
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons"
+    })
+    use("norcalli/nvim-colorizer.lua")
 end)
 
 -- When we are bootstrapping a configuration, it doesn't

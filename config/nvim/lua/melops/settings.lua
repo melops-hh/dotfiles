@@ -1,10 +1,13 @@
 -- global variables
 vim.g.mapleader = " " -- Set <space> as the leader key
 vim.g.maplocalleader = " " -- Set <space> as the leader key
-vim.g.netrw_banner = 0 -- surpress the banner
-vim.g.netrw_keepdir = 0 -- keep current directory and browsing directory synced
-vim.g.netrw_liststyle = 3 -- ide like 
-vim.g.netrw_winsize = 15 -- set initial window size to 15%
+vim.g.did_load_filetypes = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+-- vim.g.netrw_banner = 0 -- surpress the banner
+-- vim.g.netrw_keepdir = 0 -- keep current directory and browsing directory synced
+-- vim.g.netrw_liststyle = 3 -- ide like 
+-- vim.g.netrw_winsize = 15 -- set initial window size to 15%
 
 -- global scipe settings
 vim.o.breakindent = true -- Enable break indent

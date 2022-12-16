@@ -1,3 +1,7 @@
+if not pcall(require, "impatient") then
+	print("Failed to load impatient.")
+end
+
 require("melops");
 
 -- The line beneath this is called `modeline`. See `:help modeline`
