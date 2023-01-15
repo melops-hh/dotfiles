@@ -122,6 +122,7 @@ packer.startup(function(use)
     use('godlygeek/tabular')
     use('preservim/vim-markdown')
     use('tpope/vim-surround')
+    use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
