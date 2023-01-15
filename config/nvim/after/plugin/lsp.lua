@@ -65,22 +65,36 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
+        ["<CR>"] = cmp.mapping.confirm({
+            -- this is the important line
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false,
+        }),
 })
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
-    -- sources = {
-    --     { name = "copilot" , group_index = 2 },
-    --     { name = "cmp-buffer" , group_index = 2 },
-    --     { name = "cmp-path" , group_index = 2 },
-    --     { name = "cmp_luasnip" , group_index = 2 },
-    --     { name = "cmp-nvim-lsp" , group_index = 2 },
-    --     { name = "cmp-nvim-lua" , group_index = 2 },
-    --     { name = "nvim_lsp", group_index = 2 },
-    --     { name = "path", group_index = 2 },
-    --     { name = "luasnip", group_index = 2 },
-    -- }
+    sources = {
+        { name = "copilot" , group_index = 2 },
+        { name = "cmp-buffer" , group_index = 2 },
+        { name = "cmp-path" , group_index = 2 },
+        { name = "cmp_luasnip" , group_index = 2 },
+        { name = "cmp-nvim-lsp" , group_index = 2 },
+        { name = "cmp-nvim-lua" , group_index = 2 },
+        { name = "nvim_lsp", group_index = 2 },
+        { name = "path", group_index = 2 },
+        { name = "luasnip", group_index = 2 },
+    },
 })
 
 lsp.nvim_workspace();
 lsp.setup();
+
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    update_in_insert = false,
+    underline = true,
+    severity_sort = false,
+    float = true,
+})

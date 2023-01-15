@@ -18,9 +18,12 @@ map("n", ",,", ":w <CR>")
 
 -- delete without registering word
 map({"n", "v"}, "X", '"_d', { noremap = true })
+-- paste without registering word
+map({"n", "v"}, "<leader>p", '"_dP', { noremap = true })
 
-map({"n", "v"}, "<leader>k", ":m .-2<CR>==")
-map({"n", "v"}, "<leader>j", ":m .+1<CR>==")
+-- moving blocks with automatically indenting
+map({"v"}, "J", ":m '>+1<CR>gv=gv")
+map({"v"}, "K", ":m '<-2<CR>gv=gv")
 
 -- See `:help telescope.builtin`
 map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
@@ -68,8 +71,9 @@ map("n", "<c-d>", "<c-d>zz", { noremap = true })
 map("n", "n", "nzz", { noremap = true })
 
 -- open lazygit in a floating window
-map("n", "<leader>gi", ":FloatermNew --width=0.95 --height=0.95 lazygit<CR>", { noremap = true })
+map("n", "<leader>lz", ":FloatermNew --width=0.95 --height=0.95 lazygit<CR>", { noremap = true })
 
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- quickfix list
 map("n", "<C-[>", ":cprev<CR>", { noremap = true })
 map("n", "<C-]>", ":cnext<CR>", { noremap = true })

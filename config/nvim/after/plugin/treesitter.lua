@@ -7,7 +7,21 @@ end
 -- See `:help nvim-treesitter`
 treesitter.setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = {"c", "cpp", "go", "lua", "python", "rust", "typescript", "php", "fish", "html", "css"},
+    ensure_installed = {
+        "bash",
+        "css",
+        "fish",
+        "go",
+        "html",
+        "javascript",
+        "lua",
+        "php",
+        "python",
+        "rust",
+        "toml",
+        "typescript",
+        "yaml",
+    },
 
     highlight = {
         enable = true

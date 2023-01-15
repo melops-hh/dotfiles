@@ -10,12 +10,14 @@ zenmode.setup({
   },
   plugins = {
     tmux = { enabled = false }
+  },
+  options = {
+    number = true,
+    relativenumber = true,
   }
 })
 
 vim.keymap.set("n", "<leader>zz", function()
 	zenmode.toggle()
 	vim.wo.wrap = false
-	vim.wo.number = true
-	vim.wo.relativenumber = true
 end)
