@@ -118,6 +118,9 @@ packer.startup(function(use)
     use("norcalli/nvim-colorizer.lua")
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    use('epwalsh/obsidian.nvim')
+    use('godlygeek/tabular')
+    use('preservim/vim-markdown')
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
