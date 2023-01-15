@@ -121,6 +121,7 @@ packer.startup(function(use)
     use('epwalsh/obsidian.nvim')
     use('godlygeek/tabular')
     use('preservim/vim-markdown')
+    use('tpope/vim-surround')
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
