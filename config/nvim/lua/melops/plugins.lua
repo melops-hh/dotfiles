@@ -117,6 +117,7 @@ packer.startup(function(use)
     })
     use("norcalli/nvim-colorizer.lua")
     use('mbbill/undotree')
+    use('tpope/vim-fugitive')
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
