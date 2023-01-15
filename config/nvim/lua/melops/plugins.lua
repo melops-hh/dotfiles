@@ -116,6 +116,7 @@ packer.startup(function(use)
         requires = "kyazdani42/nvim-web-devicons"
     })
     use("norcalli/nvim-colorizer.lua")
+    use('mbbill/undotree')
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
