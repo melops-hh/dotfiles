@@ -9,6 +9,6 @@ Comment.setup({
         line = "cl"
     },
     opleader = {
-        line = "<leader>c"
+        line = "cl"
     }
 })
