@@ -1,0 +1,10 @@
+#!/bin/bash
+# Notify When Done
+
+# check the exit code of the previous command
+if [ $? -eq 0 ]; then
+  message="Script run successfully"
+else
+  message="Script failed"
+fi
+terminal-notifier -title "Notify When Done" -message "$message"

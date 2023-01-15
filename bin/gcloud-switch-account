@@ -1,0 +1,5 @@
+#!/bin/bash
+
+account=$(gcloud auth list --format="value(account)" | fzf)
+[[ -z "$account" ]] && exit
+gcloud config set account "$account"
