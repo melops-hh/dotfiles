@@ -123,12 +123,16 @@ packer.startup(function(use)
     use('preservim/vim-markdown')
     use('tpope/vim-surround')
     use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
+
     use({
         "nvim-neorg/neorg",
-        -- tag = "*",
         ft = "norg",
         after = "nvim-treesitter", -- You may want to specify Telescope here as well
+        config = function()
+            require("melops.config.neorg")
+        end,
     })
+
 end)
 
 -- When we are bootstrapping a configuration, it doesn't

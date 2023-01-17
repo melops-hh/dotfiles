@@ -4,6 +4,7 @@ if not ok then
     return
 end
 
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 lsp.on_attach(function(_, bufnr)
