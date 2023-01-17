@@ -15,6 +15,7 @@ treesitter.setup {
         "html",
         "javascript",
         "lua",
+        "norg",
         "php",
         "python",
         "rust",
