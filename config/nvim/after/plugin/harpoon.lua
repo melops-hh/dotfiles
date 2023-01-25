@@ -1,3 +1,14 @@
+local ok_mark = pcall(require, "harpoon.mark")
+if not ok_mark then
+	vim.notify("Could not find harpoon.mark");
+	return
+end
+local ok_ui = pcall(require, "harpoon.ui")
+if not ok_ui then
+	vim.notify("Could not find harpoon.ui");
+	return
+end
+
 local mark = require('harpoon.mark')
 local ui = require('harpoon.ui')
 
