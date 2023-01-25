@@ -15,6 +15,8 @@ treesitter.setup {
         "html",
         "javascript",
         "lua",
+        "markdown",
+        "markdown_line",
         "norg",
         "php",
         "python",
@@ -25,7 +27,8 @@ treesitter.setup {
     },
 
     highlight = {
-        enable = true
+        enable = true,
+        additional_vim_regex_highlighting = { "markdown" }, -- benifit from Obsidian.nvim's extra syntax improvements
     },
     indent = {
         enable = true
