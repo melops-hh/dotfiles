@@ -16,7 +16,7 @@ treesitter.setup {
         "javascript",
         "lua",
         "markdown",
-        "markdown_line",
+        "markdown_inline",
         "norg",
         "php",
         "python",
