@@ -12,6 +12,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Format on save
 vim.api.nvim_create_autocmd(
   { "BufWritePre" },
-  { pattern = { "*.js", "*.ts", "*.mjs", "*.tsx", "*.go", "*.py", "*.rs", "*.php" },
+  { pattern = { "*.go", "*.py", "*.rs", "*.php" },
     command = [[lua vim.lsp.buf.format { async = false }]] }
+)
+
+-- Format on save with Neoformat
+vim.api.nvim_create_autocmd(
+  { "BufWritePre" },
+  { pattern = { "*.js", "*.ts", "*.mjs", "*.tsx" },
+    command = [[Neoformat]] }
 )

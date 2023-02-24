@@ -123,6 +123,13 @@ packer.startup(function(use)
     use('preservim/vim-markdown')
     use('tpope/vim-surround')
     use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
+    use({'akinsho/git-conflict.nvim',
+        tag = "*",
+        config = function()
+            require('git-conflict').setup()
+        end
+    })
+    use('sbdchd/neoformat')
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
