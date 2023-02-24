@@ -58,7 +58,7 @@ end)
 
 lsp.preset("recommended");
 
-lsp.ensure_installed({"sumneko_lua", "eslint", "bashls", "clangd", "gopls", "phpactor", "pyright", "rust_analyzer", "tsserver"});
+lsp.ensure_installed({"eslint", "bashls", "clangd", "gopls", "phpactor", "pyright", "rust_analyzer", "tsserver"});
 local cmp = require("cmp")
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
