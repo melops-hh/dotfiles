@@ -1,4 +1,5 @@
 require("melops/settings");
 require("melops/commands");
 require("melops/keybindings");
-require("melops/plugins");
+require("melops/lazy");
+-- require("melops/plugins");
