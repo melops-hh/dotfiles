@@ -22,6 +22,9 @@ vim.o.syntax = "on"
 vim.o.termguicolors = true
 vim.o.undofile = true -- Save undo history
 vim.o.updatetime = 50 -- Decrease update time
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
 
 -- window scope settings
 vim.wo.number = true -- Make line numbers default

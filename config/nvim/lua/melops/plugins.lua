@@ -94,7 +94,7 @@ packer.startup(function(use)
     -- Commenting
     use("numToStr/Comment.nvim")
     -- Detect tabstop and shiftwidth automatically
-    use("tpope/vim-sleuth")
+    -- use("tpope/vim-sleuth")
     use("voldikss/vim-floaterm")
     use({
         "folke/zen-mode.nvim",
