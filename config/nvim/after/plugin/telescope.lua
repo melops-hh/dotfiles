@@ -6,15 +6,43 @@ end
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 telescope.setup {
-    defaults = {
-        mappings = {
-            i = {
-                ["<C-u>"] = false,
-                ["<C-d>"] = false,
-                ["<C-h>"] = "which_key"
-            }
-        }
-    }
+	defaults = {
+		layout_strategy = "horizontal",
+		layout_config = {
+			width = 0.95,
+			height = 0.85,
+			prompt_position = "top",
+			horizontal = {
+				preview_width = function(_, cols, _)
+					if cols > 200 then
+						return math.floor(cols * 0.4)
+					else
+						return math.floor(cols * 0.6)
+					end
+				end,
+			},
+			vertical = {
+				width = 0.9,
+				height = 0.95,
+				preview_height = 0.5,
+			},
+			flex = {
+				horizontal = {
+					preview_width = 0.9,
+				},
+			},
+		},
+		sorting_strategy = "ascending",
+		prompt_prefix = " ",
+		selection_caret = " ",
+		mappings = {
+			i = {
+				["<C-u>"] = false,
+				["<C-d>"] = false,
+				["<C-h>"] = "which_key"
+			}
+		}
+	}
 }
 
 -- Enable telescope fzf native, if installed
