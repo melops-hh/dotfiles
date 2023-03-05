@@ -3,11 +3,12 @@ env:
 
 selection:
   save_to_clipboard: true
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
 
 # Font configuration
 font:
   ## Point size
-  size: 14.0
+  size: 15.0
   normal:
     family: MesloLGS NF
     #family: Fira Code
@@ -22,11 +23,6 @@ font:
     style: Italic
  
 background_rpacity: 1.0
-
-selection:
-  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
-
-  save_to_clipboard: true
 
 live_config_reload: true
 
