@@ -53,7 +53,7 @@ map("n", "<c-d>", "<c-d>zz", { noremap = true })
 map("n", "n", "nzz", { noremap = true })
 
 -- open lazygit in a floating window
-map("n", "<leader>lz", ":FloatermNew --width=0.95 --height=0.95 lazygit<CR>", { noremap = true })
+map("n", "<leader>lz", ":FloatermNew --width=1.00 --height=1.00 lazygit<CR>", { noremap = true })
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- quickfix list
