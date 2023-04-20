@@ -4,8 +4,8 @@ local map = vim.keymap.set
 map({"n", "v"}, "<Space>", "<Nop>", { silent = true })
 
 -- Remap for dealing with word wrap
-map("n", "k", 'v:count == 0 ? "gk" : "k"', { expr = true, silent = true })
-map("n", "j", 'v:count == 0 ? "gj" : "j"', { expr = true, silent = true })
+-- map("n", "k", 'v:count == 0 ? "gk" : "k"', { expr = true, silent = true })
+-- map("n", "j", 'v:count == 0 ? "gj" : "j"', { expr = true, silent = true })
 
 -- map kj to ESC
 map("i", "kj", "<ESC>", { silent = true })
