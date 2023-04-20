@@ -22,7 +22,6 @@ font:
     family: MesloLGS NF
     style: Italic
  
-background_rpacity: 1.0
 
 live_config_reload: true
 
@@ -33,6 +32,7 @@ window:
   dynamic_padding: true
   draw_bold_text_with_bright_colors: true
   startup_mode: Windowed
+  opacity: 1
 
 schemes:
   # Colors (Gruvbox dark)
