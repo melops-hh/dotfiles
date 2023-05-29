@@ -145,6 +145,7 @@ packer.startup(function(use)
 			require("melops.config.neorg")
 		end,
 	}
+	use('akinsho/flutter-tools.nvim')
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
