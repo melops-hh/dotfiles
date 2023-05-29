@@ -45,6 +45,9 @@ telescope.setup {
 	}
 }
 
+require("telescope").load_extension "file_browser"
+
+
 -- Enable telescope fzf native, if installed
 pcall(require("telescope").load_extension, "fzf")
 
@@ -90,3 +93,11 @@ vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc
 vim.keymap.set("n", "<leader>fw", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
 vim.keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
 vim.keymap.set("n", "<c-p>", require("telescope.builtin").git_files , { desc = "[S]earch [G]it [F]iles" })
+
+-- open file_browser with the path of the current buffer
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fb",
+  ":Telescope file_browser path=%:p:h select_buffer=true",
+  { noremap = true }
+)

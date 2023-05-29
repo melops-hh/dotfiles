@@ -83,6 +83,10 @@ packer.startup(function(use)
 		run = "make",
 		cond = vim.fn.executable "make" == 1
 	})
+	use({
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+	})
 	-- Tmux navigation
 	use("christoomey/vim-tmux-navigator")
 	-- Statusline
