@@ -5,7 +5,6 @@
 
 -- local mark = require('harpoon.mark')
 -- local ui = require('harpoon.ui')
-
 return {
 	-- Tmux navigation
 	"christoomey/vim-tmux-navigator",
@@ -15,14 +14,14 @@ return {
 	{
 		"ThePrimeagen/harpoon",
 		keys = {
-			{ "<leader>fa", "<cmd> lua require('harpoon.mark').add_file()<cr>", desc = "Add file to harpoon" },
+			{ "<leader>fa", "<cmd> lua require('harpoon.mark').add_file()<cr>",        desc = "Add file to harpoon" },
 			{ "<leader>fm", "<cmd> lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon menu" },
-			{ "<leader>fN", "<cmd> lua require('harpoon.ui').nav_next()<cr>", desc = "Navigate to next file" },
-			{ "<leader>fP", "<cmd> lua require('harpoon.ui').nav_prev()<cr>", desc = "Navigate to prev file" },
-			{ "<leader>1", "<cmd> lua require('harpoon.ui').nav_file(1)<cr>", desc = "Navigate to file 1" },
-			{ "<leader>2", "<cmd> lua require('harpoon.ui').nav_file(2)<cr>", desc = "Navigate to file 2" },
-			{ "<leader>3", "<cmd> lua require('harpoon.ui').nav_file(3)<cr>", desc = "Navigate to file 3" },
-			{ "<leader>4", "<cmd> lua require('harpoon.ui').nav_file(4)<cr>", desc = "Navigate to file 4" },
+			{ "<leader>fN", "<cmd> lua require('harpoon.ui').nav_next()<cr>",          desc = "Navigate to next file" },
+			{ "<leader>fP", "<cmd> lua require('harpoon.ui').nav_prev()<cr>",          desc = "Navigate to prev file" },
+			{ "<leader>1",  "<cmd> lua require('harpoon.ui').nav_file(1)<cr>",         desc = "Navigate to file 1" },
+			{ "<leader>2",  "<cmd> lua require('harpoon.ui').nav_file(2)<cr>",         desc = "Navigate to file 2" },
+			{ "<leader>3",  "<cmd> lua require('harpoon.ui').nav_file(3)<cr>",         desc = "Navigate to file 3" },
+			{ "<leader>4",  "<cmd> lua require('harpoon.ui').nav_file(4)<cr>",         desc = "Navigate to file 4" },
 		},
 	},
 	-- better diagnostics list and others
@@ -31,11 +30,11 @@ return {
 		cmd = { "TroubleToggle", "Trouble" },
 		opts = { use_diagnostic_signs = true },
 		keys = {
-			{ "<leader>ft", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+			{ "<leader>ft", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics (Trouble)" },
 			{ "<leader>fT", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
 		},
 	},
-		-- references
+	-- references
 	{
 		"RRethy/vim-illuminate",
 		event = "BufReadPost",
@@ -69,13 +68,13 @@ return {
 			},
 		},
 		keys = {
-			{ "<leader>mo", "<cmd>GitConflictChooseOurs<cr>", desc = "Choose ours (current)" },
+			{ "<leader>mo", "<cmd>GitConflictChooseOurs<cr>",   desc = "Choose ours (current)" },
 			{ "<leader>mt", "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose theirs (incoming)" },
-			{ "<leader>mb", "<cmd>GitConflictChooseBoth<cr>", desc = "Choose both" },
-			{ "<leader>mn", "<cmd>GitConflictChooseNone<cr>", desc = "Choose none" },
+			{ "<leader>mb", "<cmd>GitConflictChooseBoth<cr>",   desc = "Choose both" },
+			{ "<leader>mn", "<cmd>GitConflictChooseNone<cr>",   desc = "Choose none" },
 			{ "<leader>m]", "<cmd>GitConflictNextConflict<cr>", desc = "Move to next conflict" },
 			{ "<leader>m[", "<cmd>GitConflictPrevConflict<cr>", desc = "Move to prev conflict" },
-			{ "<leader>ml", "<cmd>GitConflictListQf<cr>", desc = "List merge conflicts" },
+			{ "<leader>ml", "<cmd>GitConflictListQf<cr>",       desc = "List merge conflicts" },
 		},
 	},
 	-- simple notifier
@@ -84,7 +83,7 @@ return {
 		event = "VeryLazy",
 		config = true,
 	},
-		-- better vim.ui
+	-- better vim.ui
 	{
 		"stevearc/dressing.nvim",
 		init = function()
@@ -106,5 +105,13 @@ return {
 
 	-- ui components
 	{ "MunifTanjim/nui.nvim" },
+	{
+		'stevearc/oil.nvim',
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		keys = {
+			-- { "<C-b>", "<cmd> lua require('oil').open<cr>", desc = "Open parent directory" },
+		}
+	},
 }
-

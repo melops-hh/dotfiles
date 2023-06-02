@@ -18,13 +18,13 @@ vim.keymap.set("n", "<leader>.", "<c-^>", { silent = true })
 vim.keymap.set("n", ",,", ":w <CR>")
 
 -- delete without registering word
-vim.keymap.set({"n", "v"}, "X", '"_d', { noremap = true })
+vim.keymap.set({ "n", "v" }, "X", '"_d', { noremap = true })
 -- paste without registering word
-vim.keymap.set({"n", "v"}, "<leader>p", '"_dP', { noremap = true })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"_dP', { noremap = true })
 
 -- moving blocks with automatically indenting
-vim.keymap.set({"v"}, "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set({"v"}, "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set({ "v" }, "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set({ "v" }, "K", ":m '<-2<CR>gv=gv")
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -35,3 +35,5 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- quickfix list
 vim.keymap.set("n", "<C-[>", ":cprev<CR>", { noremap = true })
 vim.keymap.set("n", "<C-]>", ":cnext<CR>", { noremap = true })
+
+vim.keymap.set("n", "<C-b>", require("oil").open, { desc = "Open parent directory" })
