@@ -100,6 +100,7 @@ return {
 		end,
 	},
 
+	{ "nvim-tree/nvim-tree.lua" },
 	-- icons
 	{ "nvim-tree/nvim-web-devicons" },
 
@@ -114,4 +115,5 @@ return {
 			-- { "<C-b>", "<cmd> lua require('oil').open<cr>", desc = "Open parent directory" },
 		}
 	},
+	'sbdchd/neoformat',
 }

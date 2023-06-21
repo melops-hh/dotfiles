@@ -9,3 +9,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- Format on save with Neoformat
+vim.api.nvim_create_autocmd(
+  { "BufWritePre" },
+  {
+    pattern = { "*.js", "*.ts", "*.mjs", "*.tsx", "*.dart", "*.lua", "*.go" },
+    command = [[Neoformat]]
+  }
+)
