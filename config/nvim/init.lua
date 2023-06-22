@@ -29,7 +29,20 @@ require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
-  'tpope/vim-fugitive',
+  {'tpope/vim-fugitive',
+    keys = {
+      { "<leader>gs", "<cmd>G<cr>", desc = "Git status" },
+      { "<leader>gc", "<cmd>G commit<cr>", desc = "Git commit" },
+      { "<leader>gf", "<cmd>G fetch origin<cr>", desc = "Git fetch origin" },
+      { "<leader>gp", "<cmd>G pull<cr>", desc = "Git pull" },
+      { "<leader>gP", "<cmd>G push --force-with-lease<cr>", desc = "Git push (force)" },
+      { "<leader>gl", "<cmd>G log<cr>", desc = "Git log" },
+      { "<leader>gh", "<cmd>G log --stat %<cr>", desc = "Git log stat" },
+      { "<leader>gd", "<cmd>G diff %<cr>", desc = "Git diff (file)" },
+      { "<leader>gD", "<cmd>G diff<cr>", desc = "Git diff (workspace)" },
+      { "<leader>gb", "<cmd>G blame<cr>", desc = "Git blame" },
+    }
+  },
   'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
@@ -64,6 +77,8 @@ require('lazy').setup({
 
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
@@ -474,6 +489,8 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'path' }
   },
 }
 

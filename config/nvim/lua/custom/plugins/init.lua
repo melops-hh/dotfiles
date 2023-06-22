@@ -9,7 +9,27 @@ return {
 	-- Tmux navigation
 	"christoomey/vim-tmux-navigator",
 	"voldikss/vim-floaterm",
-	"folke/zen-mode.nvim",
+	{"folke/zen-mode.nvim",
+		opts = {
+			window = {
+				width = .80
+			},
+			plugins = {
+				tmux = {enabled = false},
+				alacritty = {
+					enabled = false,
+					font = "14", -- font size
+				},
+			},
+			options = {
+				number =true,
+				relativenumber =true
+			}
+		},
+		keys = {
+			{ "<leader>zz", "<cmd>ZenMode<cr>", desc = "Toggle Zendmode" }
+		}
+	},
 	-- harpoon
 	{
 		"ThePrimeagen/harpoon",
@@ -59,22 +79,14 @@ return {
 	{
 		"akinsho/git-conflict.nvim",
 		event = "VeryLazy",
+		version = "*",
 		config = true,
 		opts = {
-			default_mappings = false,
+			default_mappings = true,
 			highlights = {
 				incoming = "DiffAdd",
 				current = "DiffChange",
 			},
-		},
-		keys = {
-			{ "<leader>mo", "<cmd>GitConflictChooseOurs<cr>",   desc = "Choose ours (current)" },
-			{ "<leader>mt", "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose theirs (incoming)" },
-			{ "<leader>mb", "<cmd>GitConflictChooseBoth<cr>",   desc = "Choose both" },
-			{ "<leader>mn", "<cmd>GitConflictChooseNone<cr>",   desc = "Choose none" },
-			{ "<leader>m]", "<cmd>GitConflictNextConflict<cr>", desc = "Move to next conflict" },
-			{ "<leader>m[", "<cmd>GitConflictPrevConflict<cr>", desc = "Move to prev conflict" },
-			{ "<leader>ml", "<cmd>GitConflictListQf<cr>",       desc = "List merge conflicts" },
 		},
 	},
 	-- simple notifier
@@ -116,4 +128,5 @@ return {
 		}
 	},
 	'sbdchd/neoformat',
+	{ 'pwntester/octo.nvim', opts = {}, cmd = "Octo" }
 }
