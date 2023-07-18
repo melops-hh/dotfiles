@@ -129,4 +129,6 @@ return {
 	},
 	'sbdchd/neoformat',
 	{ 'pwntester/octo.nvim', opts = {}, cmd = "Octo" }
+	{ 'pwntester/octo.nvim', opts = {}, cmd = "Octo" },
+	{'github/copilot.vim'},
 }
