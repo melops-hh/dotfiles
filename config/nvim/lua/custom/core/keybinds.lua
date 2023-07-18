@@ -37,3 +37,7 @@ vim.keymap.set("n", "<C-[>", ":cprev<CR>", { noremap = true })
 vim.keymap.set("n", "<C-]>", ":cnext<CR>", { noremap = true })
 
 vim.keymap.set("n", "<C-b>", require("oil").open, { desc = "Open parent directory" })
+
+
+-- open lazygit in a floating window
+vim.keymap.set("n", "<leader>lz", ":FloatermNew --width=1.00 --height=1.00 lazygit<CR>", { noremap = true })
