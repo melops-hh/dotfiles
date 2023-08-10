@@ -30,20 +30,6 @@ return {
 			{ "<leader>zz", "<cmd>ZenMode<cr>", desc = "Toggle Zendmode" }
 		}
 	},
-	-- harpoon
-	{
-		"ThePrimeagen/harpoon",
-		keys = {
-			{ "<leader>fa", "<cmd> lua require('harpoon.mark').add_file()<cr>",        desc = "Add file to harpoon" },
-			{ "<leader>fm", "<cmd> lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon menu" },
-			{ "<leader>fN", "<cmd> lua require('harpoon.ui').nav_next()<cr>",          desc = "Navigate to next file" },
-			{ "<leader>fP", "<cmd> lua require('harpoon.ui').nav_prev()<cr>",          desc = "Navigate to prev file" },
-			{ "<leader>1",  "<cmd> lua require('harpoon.ui').nav_file(1)<cr>",         desc = "Navigate to file 1" },
-			{ "<leader>2",  "<cmd> lua require('harpoon.ui').nav_file(2)<cr>",         desc = "Navigate to file 2" },
-			{ "<leader>3",  "<cmd> lua require('harpoon.ui').nav_file(3)<cr>",         desc = "Navigate to file 3" },
-			{ "<leader>4",  "<cmd> lua require('harpoon.ui').nav_file(4)<cr>",         desc = "Navigate to file 4" },
-		},
-	},
 	-- better diagnostics list and others
 	{
 		"folke/trouble.nvim",
@@ -76,20 +62,21 @@ return {
 		},
 	},
 	-- git mergetool
-	{
-		"akinsho/git-conflict.nvim",
-		event = "VeryLazy",
-		version = "*",
-		config = true,
-		opts = {
-			default_mappings = true,
-			highlights = {
-				incoming = "DiffAdd",
-				current = "DiffChange",
-			},
-		},
-	},
+	-- {
+	-- 	"akinsho/git-conflict.nvim",
+	-- 	event = "VeryLazy",
+	-- 	version = "v1.1.2",
+	-- 	config = true,
+	-- 	opts = {
+	-- 		default_mappings = true,
+	-- 		highlights = {
+	-- 			incoming = "DiffAdd",
+	-- 			current = "DiffChange",
+	-- 		},
+	-- 	},
+	-- },
 	-- simple notifier
+	{'sindrets/diffview.nvim'},
 	{
 		"vigoux/notifier.nvim",
 		event = "VeryLazy",
@@ -112,7 +99,16 @@ return {
 		end,
 	},
 
-	{ "nvim-tree/nvim-tree.lua" },
+	{ "nvim-tree/nvim-tree.lua",
+		opts = {
+			filters = {
+				dotfiles = true,
+			},
+		},
+		keys = {
+			{ "<C-n>", "<cmd>NvimTreeFindFile<cr>",  desc = "[N]vim tree toggle" },
+		}
+	},
 	-- icons
 	{ "nvim-tree/nvim-web-devicons" },
 
@@ -128,7 +124,8 @@ return {
 		}
 	},
 	'sbdchd/neoformat',
-	{ 'pwntester/octo.nvim', opts = {}, cmd = "Octo" }
 	{ 'pwntester/octo.nvim', opts = {}, cmd = "Octo" },
 	{'github/copilot.vim'},
+	{'nvim-treesitter/nvim-treesitter-context'},
+
 }
