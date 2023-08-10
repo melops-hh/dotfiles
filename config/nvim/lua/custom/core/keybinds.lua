@@ -38,6 +38,13 @@ vim.keymap.set("n", "<C-]>", ":cnext<CR>", { noremap = true })
 
 vim.keymap.set("n", "<C-b>", require("oil").open, { desc = "Open parent directory" })
 
+-- center while scrolling and searching
+vim.keymap.set("n", "<c-u>", "<c-u>zz", { noremap = true })
+vim.keymap.set("n", "<c-d>", "<c-d>zz", { noremap = true })
+
+-- navigate search while staying centered
+vim.keymap.set("n", "n", "nzzzv", { noremap = true })
+vim.keymap.set("n", "N", "Nzzzv", { noremap = true })
 
 -- open lazygit in a floating window
 vim.keymap.set("n", "<leader>lz", ":FloatermNew --width=1.00 --height=1.00 lazygit<CR>", { noremap = true })
