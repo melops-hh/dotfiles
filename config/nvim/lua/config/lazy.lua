@@ -128,19 +128,6 @@ require('lazy').setup({
     opts = {},
   },
 
-  -- "cl" to comment visual regions/lines
-  {
-    'numToStr/Comment.nvim',
-    opts = {
-      toggler = {
-        line = "cl"
-      },
-      opleader = {
-        line = "cl"
-      }
-    }
-  },
-
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
 
