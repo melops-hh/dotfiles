@@ -127,5 +127,5 @@ return {
 	{ 'pwntester/octo.nvim', opts = {}, cmd = "Octo" },
 	{'github/copilot.vim'},
 	{'nvim-treesitter/nvim-treesitter-context'},
-
+	{'fatih/vim-go'}
 }
