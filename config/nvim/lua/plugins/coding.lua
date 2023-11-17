@@ -1,35 +1,35 @@
 return {
-	-- testing
-	{
-		"vim-test/vim-test",
-		event = "VeryLazy",
-		config = function()
-			local tt = require("toggleterm")
-			local ttt = require("toggleterm.terminal")
+  -- testing
+  {
+    "vim-test/vim-test",
+    event = "VeryLazy",
+    config = function()
+      local tt = require("toggleterm")
+      local ttt = require("toggleterm.terminal")
 
-			vim.g["test#custom_strategies"] = {
-				tterm = function(cmd)
-					tt.exec(cmd)
-				end,
+      vim.g["test#custom_strategies"] = {
+	tterm = function(cmd)
+	  tt.exec(cmd)
+	end,
 
-				tterm_close = function(cmd)
-					local term_id = 0
-					tt.exec(cmd, term_id)
-					ttt.get_or_create_term(term_id):close()
-				end,
-			}
+	tterm_close = function(cmd)
+	  local term_id = 0
+	  tt.exec(cmd, term_id)
+	  ttt.get_or_create_term(term_id):close()
+	end,
+      }
 
-			vim.g["test#strategy"] = "tterm"
-			vim.g["test#python#pytest#options"] = "-vv"
-		end,
-		keys = {
-			{ "<leader>tt", "<cmd>TestNearest<cr>", desc = "Test closest" },
-			{ "<leader>tf", "<cmd>TestFile<cr>", desc = "Test file" },
-			{ "<leader>ta", "<cmd>TestSuite<cr>", desc = "Test suite" },
-			{ "<leader>tl", "<cmd>TestLast<cr>", desc = "Test last" },
-			{ "<leader>tv", "<cmd>TestVisit<cr>", desc = "Test visit" },
-		},
-	},
+      vim.g["test#strategy"] = "tterm"
+      vim.g["test#python#pytest#options"] = "-vv"
+    end,
+    keys = {
+      { "<leader>tt", "<cmd>TestNearest<cr>", desc = "Test closest" },
+      { "<leader>tf", "<cmd>TestFile<cr>", desc = "Test file" },
+      { "<leader>ta", "<cmd>TestSuite<cr>", desc = "Test suite" },
+      { "<leader>tl", "<cmd>TestLast<cr>", desc = "Test last" },
+      { "<leader>tv", "<cmd>TestVisit<cr>", desc = "Test visit" },
+    },
+  },
 
   {'tpope/vim-fugitive',
     keys = {
@@ -53,16 +53,16 @@ return {
     opts = {
       -- See `:help gitsigns.txt`
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
+	add = { text = '+' },
+	change = { text = '~' },
+	delete = { text = '_' },
+	topdelete = { text = '‾' },
+	changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '[c', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
-        vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+	vim.keymap.set('n', '[c', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
+	vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
+	vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
       end,
     },
   },
@@ -82,7 +82,7 @@ return {
       { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
+      { 'folke/neodev.nvim' }
     },
   },
 
@@ -101,6 +101,14 @@ return {
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+    },
+  },
+
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    lazy = true,
+    opts = {
+      enable_autocmd = false,
     },
   },
 
