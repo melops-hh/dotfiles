@@ -98,16 +98,15 @@ return {
 
 	-- ui components
 	{ "MunifTanjim/nui.nvim" },
+
 	{
 		'stevearc/oil.nvim',
 		opts = {},
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		keys = {
-			-- { "<C-b>", "<cmd> lua require('oil').open<cr>", desc = "Open parent directory" },
-		}
 	},
-	'sbdchd/neoformat',
+
+	{ 'sbdchd/neoformat' },
 	{ 'pwntester/octo.nvim', opts = {}, cmd = "Octo" },
 	{'github/copilot.vim'},
 	{'nvim-treesitter/nvim-treesitter-context'},
