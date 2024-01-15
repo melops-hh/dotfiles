@@ -1,25 +1,38 @@
 #!/bin/bash
 
+# Check if the script was passed a command line argument
 if [[ $# -eq 1 ]]; then
+    # If an argument is passed, assign it to the variable "selected"
     selected=$1
 else
-    selected=$(find $1 -mindepth 1 -maxdepth 1 -type d | sort | fzf --reverse --header 'Select project:')
+    # If no argument is passed, use fzf to select a directory from the current directory, and assign it to the variable "selected"
+    selected=$(find $PROJECTS/worktree $PERSONAL -mindepth 1 -maxdepth 1 -type d | sort | fzf --reverse --header 'Select project:')
 fi
 
+# Check if the variable "selected" is empty
 if [[ -z $selected ]]; then
+    # Exit the script if "selected" is empty
     exit 0
 fi
 
+# Get the name of the selected directory, and replace any periods with underscores
 selected_name=$(basename "$selected" | tr . _)
+
+# Check if tmux is running
 tmux_running=$(pgrep tmux)
 
+# Check if the script is running inside tmux, and if tmux is not running
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    # Create a new tmux session with the name of the selected directory and the selected directory as the default directory
     tmux new-session -s $selected_name -c $selected
     exit 0
 fi
 
+# Check if a tmux session with the name of the selected directory does not exist
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    # Create a new tmux session with the name of the selected directory and the selected directory as the default directory, and make it the default session
     tmux new-session -ds $selected_name -c $selected
 fi
 
+# Switch to the tmux session with the name of the selected directory
 tmux switch-client -t $selected_name

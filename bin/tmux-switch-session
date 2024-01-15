@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tmux switch-client -t "$(tmux list-sessions -F "#{session_name}" | sort | fzf --reverse --header "Select Session")"
