@@ -82,7 +82,7 @@ return {
 		event = "VeryLazy",
 		config = true,
 	},
-
+	
 	{ "nvim-tree/nvim-tree.lua",
 		opts = {
 			filters = {
@@ -90,7 +90,7 @@ return {
 			},
 		},
 		keys = {
-			{ "<C-n>", "<cmd>NvimTreeFindFile<cr>",  desc = "[N]vim tree toggle" },
+			{ "<C-n>", "<cmd>NvimTreeToggle<cr>",  desc = "[N]vim tree toggle" },
 		}
 	},
 	-- icons
