@@ -57,3 +57,13 @@ vim.wo.wrap = false
 vim.wo.colorcolumn = "90"
 -- vim.wo.scrolloff = 8
 -- vim.wo.sidescrolloff = 8
+
+-- netrw settings
+-- Keep the current directory and the browsing directory synced. This helps you avoid the move files error.
+vim.g.netrw_keepdir = 0
+
+-- Hide the banner (if you want). To show it temporarily you can use I inside Netrw.
+vim.g.netrw_banner = 0
+
+-- Change the copy command. Mostly to enable recursive copy of directories.
+vim.g.netrw_localcopydircmd = 'cp -r'

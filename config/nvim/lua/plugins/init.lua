@@ -82,29 +82,11 @@ return {
 		event = "VeryLazy",
 		config = true,
 	},
-	
-	{ "nvim-tree/nvim-tree.lua",
-		opts = {
-			filters = {
-				dotfiles = true,
-			},
-		},
-		keys = {
-			{ "<C-n>", "<cmd>NvimTreeToggle<cr>",  desc = "[N]vim tree toggle" },
-		}
-	},
 	-- icons
 	{ "nvim-tree/nvim-web-devicons" },
 
 	-- ui components
 	{ "MunifTanjim/nui.nvim" },
-
-	{
-		'stevearc/oil.nvim',
-		opts = {},
-		-- Optional dependencies
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
 
 	{ 'sbdchd/neoformat' },
 	{ 'pwntester/octo.nvim', opts = {}, cmd = "Octo" },

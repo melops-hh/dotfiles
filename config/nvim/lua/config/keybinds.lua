@@ -36,7 +36,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set("n", "<C-[>", ":cprev<CR>", { noremap = true })
 vim.keymap.set("n", "<C-]>", ":cnext<CR>", { noremap = true })
 
-vim.keymap.set("n", "<C-b>", require("oil").open, { desc = "Open parent directory" })
+-- vim.keymap.set("n", "<C-b>", require("oil").open, { desc = "Open parent directory" })
 
 -- center while scrolling and searching
 vim.keymap.set("n", "<c-u>", "<c-u>zz", { noremap = true })
