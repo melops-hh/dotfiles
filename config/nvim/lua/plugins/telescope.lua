@@ -19,7 +19,7 @@ local M = {
     {"<leader>D", "<cmd> Telescope lsp_type_definitions <CR>", desc="Type Definitions"},
     {"<leader>ds", "<cmd> Telescope lsp_document_symbols <CR>", desc = "Document Symbols"},
     {"<leader>ws", "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>", desc = "Workspace Symbols"},
-    {"<leader/",
+    {"<leader>/",
       function ()
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
 	  winblend = 10,
