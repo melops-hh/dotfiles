@@ -41,6 +41,8 @@ require('lazy').setup({
         "logipat",
         "matchit",
         "matchparen",
+        "netrw",
+        "netrwPlugin",
         "rrhelper",
         "spellfile_plugin",
         "tar",
