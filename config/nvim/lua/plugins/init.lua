@@ -61,20 +61,7 @@ return {
 			{ "[[", function() require("illuminate").goto_prev_reference(false) end, desc = "Prev Reference" },
 		},
 	},
-	-- git mergetool
-	-- {
-	-- 	"akinsho/git-conflict.nvim",
-	-- 	event = "VeryLazy",
-	-- 	version = "v1.1.2",
-	-- 	config = true,
-	-- 	opts = {
-	-- 		default_mappings = true,
-	-- 		highlights = {
-	-- 			incoming = "DiffAdd",
-	-- 			current = "DiffChange",
-	-- 		},
-	-- 	},
-	-- },
+
 	-- simple notifier
 	{'sindrets/diffview.nvim'},
 	{
