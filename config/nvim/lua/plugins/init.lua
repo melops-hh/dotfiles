@@ -69,6 +69,17 @@ return {
 		event = "VeryLazy",
 		config = true,
 	},
+
+	{ "nvim-tree/nvim-tree.lua",
+			opts = {
+				filters = { dotfiles = true },
+			},
+			keys = {
+				{ "<C-b>", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
+				{ "<C-n>", "<cmd>NvimTreeFindFile<cr>", desc = "Find File in NvimTree" },
+			},
+	},
+
 	-- icons
 	{ "nvim-tree/nvim-web-devicons" },
 
