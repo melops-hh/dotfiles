@@ -34,24 +34,6 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  -- Here is a more advanced example where we pass configuration
-  -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
-  --    require('gitsigns').setup({ ... })
-  --
-  -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -176,23 +158,6 @@ require('lazy').setup({
     'christoomey/vim-tmux-navigator',
   },
   {
-    'tpope/vim-fugitive',
-    keys = {
-      { '<leader>gs', '<cmd>G<cr>', desc = 'Git status' },
-      { '<leader>gc', '<cmd>G commit<cr>', desc = 'Git commit' },
-      { '<leader>gf', '<cmd>G fetch origin<cr>', desc = 'Git fetch origin' },
-      { '<leader>gp', '<cmd>G pull<cr>', desc = 'Git pull' },
-      { '<leader>gP', '<cmd>G push --force-with-lease<cr>', desc = 'Git push (force)' },
-      { '<leader>gl', '<cmd>G log<cr>', desc = 'Git log' },
-      { '<leader>gh', '<cmd>G log --stat %<cr>', desc = 'Git log stat' },
-      { '<leader>gd', '<cmd>G diff %<cr>', desc = 'Git diff (file)' },
-      { '<leader>gD', '<cmd>G diff<cr>', desc = 'Git diff (workspace)' },
-      { '<leader>gb', '<cmd>G blame<cr>', desc = 'Git blame' },
-      { 'gf', '<cmd>diffget //3<cr>', desc = 'Git diff get (base)' },
-      { 'gh', '<cmd>diffget //2<cr>', desc = 'Git diff get (head)' },
-    },
-  },
-  {
     'ThePrimeagen/harpoon',
     keys = {
       { '<leader>fa', "<cmd> lua require('harpoon.mark').add_file()<cr>", desc = 'Add file to harpoon' },
@@ -290,6 +255,16 @@ require('lazy').setup({
         end,
         desc = 'Dismiss All',
       },
+    },
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      require('nvim-tree').setup()
+    end,
+    keys = {
+      { '<C-b>', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle NvimTree' },
+      { '<C-n>', '<cmd>NvimTreeFindFile<CR>', desc = 'Find file in NvimTree' },
     },
   },
 }, {
