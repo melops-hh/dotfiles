@@ -92,6 +92,15 @@ return {
             end
           end, { 'i', 's' }),
 
+          ['<C-J>'] = cmp.mapping(function(fallback)
+            cmp.mapping.abort()
+            local copilot_keys = vim.fn['copilot#Accept']()
+            if copilot_keys ~= '' then
+              vim.api.nvim_feedkeys(copilot_keys, 'i', true)
+            else
+              fallback()
+            end
+          end),
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },

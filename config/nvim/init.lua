@@ -209,12 +209,11 @@ require('lazy').setup({
     opts = {}, -- for default options, refer to the configuration section for custom setup.
   },
   {
-    'm4xshen/autoclose.nvim',
+    'github/copilot.vim',
     config = function()
-      require('autoclose').setup()
+      vim.g.copilot_enabled = false
     end,
   },
-  { 'github/copilot.vim' },
   {
     'folke/noice.nvim',
     event = 'VeryLazy',
