@@ -186,18 +186,26 @@ require('lazy').setup({
     'christoomey/vim-tmux-navigator',
   },
   {
-    'ThePrimeagen/harpoon',
-    keys = {
-      { '<leader>fa', "<cmd> lua require('harpoon.mark').add_file()<cr>", desc = 'Add file to harpoon' },
-      { '<leader>fm', "<cmd> lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = 'Show harpoon menu' },
-      { '<leader>fN', "<cmd> lua require('harpoon.ui').nav_next()<cr>", desc = 'Navigate to next file' },
-      { '<leader>fP', "<cmd> lua require('harpoon.ui').nav_prev()<cr>", desc = 'Navigate to prev file' },
-      { '<leader>j', "<cmd> lua require('harpoon.ui').nav_file(1)<cr>", desc = 'Navigate to file 1' },
-      { '<leader>k', "<cmd> lua require('harpoon.ui').nav_file(2)<cr>", desc = 'Navigate to file 2' },
-      { '<leader>l', "<cmd> lua require('harpoon.ui').nav_file(3)<cr>", desc = 'Navigate to file 3' },
-      { '<leader>;', "<cmd> lua require('harpoon.ui').nav_file(4)<cr>", desc = 'Navigate to file 4' },
+    'otavioschwanck/arrow.nvim',
+    opts = {
+      show_icons = true,
+      leader_key = ';', -- Recommended to be a single key
+      buffer_leader_key = 'm', -- Per Buffer Mappings
     },
   },
+  -- {
+  --   'ThePrimeagen/harpoon',
+  --   keys = {
+  --     { '<leader>fa', "<cmd> lua require('harpoon.mark').add_file()<cr>", desc = 'Add file to harpoon' },
+  --     { '<leader>fm', "<cmd> lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = 'Show harpoon menu' },
+  --     { '<leader>fN', "<cmd> lua require('harpoon.ui').nav_next()<cr>", desc = 'Navigate to next file' },
+  --     { '<leader>fP', "<cmd> lua require('harpoon.ui').nav_prev()<cr>", desc = 'Navigate to prev file' },
+  --     { '<leader>j', "<cmd> lua require('harpoon.ui').nav_file(1)<cr>", desc = 'Navigate to file 1' },
+  --     { '<leader>k', "<cmd> lua require('harpoon.ui').nav_file(2)<cr>", desc = 'Navigate to file 2' },
+  --     { '<leader>l', "<cmd> lua require('harpoon.ui').nav_file(3)<cr>", desc = 'Navigate to file 3' },
+  --     { '<leader>;', "<cmd> lua require('harpoon.ui').nav_file(4)<cr>", desc = 'Navigate to file 4' },
+  --   },
+  -- },
   {
     'voldikss/vim-floaterm',
     keys = {
