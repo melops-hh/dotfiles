@@ -328,6 +328,11 @@ require('lazy').setup({
       { '<C-n>', '<cmd>NvimTreeFindFile<CR>', desc = 'Find file in NvimTree' },
     },
   },
+  {
+    'vhyrro/luarocks.nvim',
+    priority = 1000,
+    config = true,
+  },
   -- {
   --   'nvim-neorg/neorg',
   --   dependencies = { 'luarocks.nvim' },
