@@ -53,7 +53,6 @@ vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
-vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -72,3 +71,10 @@ vim.opt.scrolloff = 10
 
 -- Disable wrap
 vim.wo.wrap = false
+
+-- Folds
+-- vim.opt.foldmethod = 'indent'
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
