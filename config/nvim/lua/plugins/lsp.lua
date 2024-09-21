@@ -15,6 +15,14 @@ return {
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/neodev.nvim', opts = {} },
     },
+    opts = {
+      inlay_hints = {
+        -- Enable inlay hints for all LSP servers
+        enabled = true,
+        -- Disable inlay hints for specific LSP servers
+        -- disabled_servers = {},
+      },
+    },
     config = function()
       -- Brief aside: **What is LSP?**
       --
@@ -168,6 +176,8 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'prettierd', -- Used to format JavaScript, TypeScript, etc.
+        'eslint_d', -- Used to lint JavaScript, TypeScript, etc.
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
