@@ -145,8 +145,7 @@ return {
       local servers = {
         gopls = {},
         pyright = {},
-        tsserver = {},
-
+        ts_ls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
