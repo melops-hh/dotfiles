@@ -37,25 +37,28 @@ return {
 
   { -- Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
     'sindrets/diffview.nvim',
+    event = 'VeryLazy',
   },
 
-  {
-    'dlvhdr/gh-blame.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' },
-    keys = {
-      { '<leader>gg', '<cmd>GhBlameCurrentLine<cr>', desc = 'GitHub Blame Current Line' },
-    },
-  },
+  -- {
+  --   'dlvhdr/gh-blame.nvim',
+  --   event = 'VeryLazy',
+  --   dependencies = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' },
+  --   keys = {
+  --     { '<leader>gg', '<cmd>GhBlameCurrentLine<cr>', desc = 'GitHub Blame Current Line' },
+  --   },
+  -- },
 
-  { -- Edit and review GitHub issues and pull requests from the comfort of your favorite editor.
-    'pwntester/octo.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
-    config = function()
-      require('octo').setup()
-    end,
-  },
+  -- { -- Edit and review GitHub issues and pull requests from the comfort of your favorite editor.
+  --   'pwntester/octo.nvim',
+  --   event = 'VeryLazy',
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-telescope/telescope.nvim',
+  --     'nvim-tree/nvim-web-devicons',
+  --   },
+  --   config = function()
+  --     require('octo').setup()
+  --   end,
+  -- },
 }
