@@ -322,6 +322,25 @@ require('lazy').setup({
       { '<C-n>', '<cmd>NvimTreeFindFile<CR>', desc = 'Find file in NvimTree' },
     },
   },
+  -- {
+  --   'nvim-neorg/neorg',
+  --   dependencies = { 'luarocks.nvim' },
+  --   lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+  --   version = '*', -- Pin Neorg to the latest stable release
+  --   config = true,
+  --   opts = {
+  --     load = {
+  --       ['core.defaults'] = {},
+  --       ['core.completion'] = { config = { engine = 'nvim-cmp', name = '[Norg]' } },
+  --       ['core.integrations.nvim-cmp'] = {},
+  --       ['core.concealer'] = {
+  --         config = {
+  --           icon_preset = 'diamond',
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
