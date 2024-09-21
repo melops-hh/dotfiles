@@ -6,7 +6,7 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     # If no argument is passed, use fzf to select a directory from the current directory, and assign it to the variable "selected"
-    selected=$(find $PROJECTS/worktree $PERSONAL -mindepth 1 -maxdepth 1 -type d | sort | fzf --reverse --header 'Select project:')
+    selected=$(find $PROJECTS/macpie-worktree $PERSONAL -mindepth 1 -maxdepth 1 -type d | sort | fzf --reverse --header 'Select project:')
 fi
 
 # Check if the variable "selected" is empty
