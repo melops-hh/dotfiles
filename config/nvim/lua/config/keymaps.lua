@@ -41,3 +41,6 @@ vim.keymap.set({ 'v' }, 'K', ":m '<-2<CR>gv=gv")
 
 -- mini.files
 vim.keymap.set('n', '<leader>mf', ':lua MiniFiles.open()<CR>', { noremap = true })
+
+-- Search and replace on the current word under the cursor
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
