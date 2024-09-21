@@ -341,6 +341,13 @@ require('lazy').setup({
   --     },
   --   },
   -- },
+
+  -- Hardtime.nvim
+  -- {
+  --   'm4xshen/hardtime.nvim',
+  --   dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+  --   opts = {},
+  -- },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -362,6 +369,5 @@ require('lazy').setup({
     },
   },
 })
-
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
