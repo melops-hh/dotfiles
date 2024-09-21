@@ -39,3 +39,5 @@ vim.keymap.set({ 'n', 'v' }, '<leader>p', '"_dP', { noremap = true })
 vim.keymap.set({ 'v' }, 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set({ 'v' }, 'K', ":m '<-2<CR>gv=gv")
 
+-- mini.files
+vim.keymap.set('n', '<leader>mf', ':lua MiniFiles.open()<CR>', { noremap = true })
