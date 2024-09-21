@@ -150,6 +150,13 @@ require('lazy').setup({
       require('mini.surround').setup()
 
       require('mini.bracketed').setup()
+      require('mini.jump').setup {
+        mappings = {
+          -- disable repeat_jump because it is used by arrow.nvim
+          repeat_jump = '',
+        },
+      }
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
