@@ -150,6 +150,7 @@ require('lazy').setup({
       require('mini.surround').setup()
 
       require('mini.bracketed').setup()
+
       require('mini.jump').setup {
         mappings = {
           -- disable repeat_jump because it is used by arrow.nvim
@@ -171,6 +172,11 @@ require('lazy').setup({
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
+      end
+
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_filename = function()
+        return vim.fn.expand '%' -- '%': relative path, '%:t': tail (filename only)
       end
 
       -- ... and there is more!
