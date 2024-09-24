@@ -1,53 +1,13 @@
---[[
-  Base setup comes from https://github.com/nvim-lua/kickstart.nvim
-
-  Next, run AND READ `:help`.
-    This will open up a help window with some basic information
-    about reading, navigating and searching the builtin help documentation.
-
-    This should be the first place you go to look when you're stuck or confused
-    with something. It's one of my favorite Neovim features.
-
-    MOST IMPORTANTLY, we provide a keymap "<space>sh" to [s]earch the [h]elp documentation,
-    which is very useful when you're not exactly sure of what you're looking for.
---]]
-
 require 'config.settings'
 require 'config.keymaps'
 require 'config.commands'
 
--- [[ Configure and install plugins ]]
-require('lazy').setup({
+require('lazy').setup {
   { import = 'plugins' },
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
-  --
-  -- Use `opts = {}` to force a plugin to be loaded.
-  --
-  --  This is equivalent to:
-  --    require('Comment').setup({})
-
-  -- "gc" to comment visual regions/lines
-  -- { 'numToStr/Comment.nvim', opts = {} },
-
-  -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
-  --
-  -- This is often very useful to both group configuration, as well as handle
-  -- lazy loading plugins that don't need to be loaded immediately at startup.
-  --
-  -- For example, in the following configuration, we use:
-  --  event = 'VimEnter'
-  --
-  -- which loads which-key before all the UI elements are loaded. Events can be
-  -- normal autocommands events (`:help autocmd-events`).
-  --
-  -- Then, because we use the `config` key, the configuration only runs
-  -- after the plugin has been loaded:
-  --  config = function() ... end
+  { -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',
+  },
 
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
@@ -62,18 +22,6 @@ require('lazy').setup({
         desc = 'Buffer Local Keymaps (which-key)',
       },
     },
-    -- config = function() -- This is the function that runs, AFTER loading
-    --   require('which-key').setup()
-    --
-    --   -- Document existing key chains
-    --   require('which-key').register {
-    --     ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-    --     ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-    --     ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-    --     ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-    --     ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-    --   }
-    -- end,
   },
 
   { -- Autoformat
@@ -92,17 +40,14 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'black' },
-        --
-        -- You can use a sub-list to tell conform to run *until* a formatter
-        -- is found.
         javascript = { { 'prettierd', 'prettier' } },
         typescript = { 'prettier' },
       },
     },
   },
-  {
+
+  { -- Catppuccin colorscheme
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
@@ -110,37 +55,23 @@ require('lazy').setup({
       vim.cmd.colorscheme 'catppuccin-latte'
     end,
   },
-  -- { -- You can easily change to a different colorscheme.
-  --   -- Change the name of the colorscheme plugin below, and then
-  --   -- change the command in the config to whatever the name of that colorscheme is.
-  --   --
-  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  --   'folke/tokyonight.nvim',
-  --   priority = 1000, -- Make sure to load this before all the other start plugins.
-  --   init = function()
-  --     -- Load the colorscheme here.
-  --     -- Like many other themes, this one has different styles, and you could load
-  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  --     vim.cmd.colorscheme 'tokyonight-day'
-  --
-  --     -- You can configure highlights by doing something like:
-  --     vim.cmd.hi 'Comment gui=none'
-  --   end,
-  -- },
 
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = true } },
-
-
+  { -- Highlight todo, notes, etc in comments
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = { signs = true },
   },
+
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    -- See `:help ibl`
     main = 'ibl',
   },
+
   { -- Tmux navigation
     'christoomey/vim-tmux-navigator',
   },
+
   {
     'otavioschwanck/arrow.nvim',
     opts = {
@@ -149,25 +80,14 @@ require('lazy').setup({
       buffer_leader_key = 'm', -- Per Buffer Mappings
     },
   },
-  -- {
-  --   'ThePrimeagen/harpoon',
-  --   keys = {
-  --     { '<leader>fa', "<cmd> lua require('harpoon.mark').add_file()<cr>", desc = 'Add file to harpoon' },
-  --     { '<leader>fm', "<cmd> lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = 'Show harpoon menu' },
-  --     { '<leader>fN', "<cmd> lua require('harpoon.ui').nav_next()<cr>", desc = 'Navigate to next file' },
-  --     { '<leader>fP', "<cmd> lua require('harpoon.ui').nav_prev()<cr>", desc = 'Navigate to prev file' },
-  --     { '<leader>j', "<cmd> lua require('harpoon.ui').nav_file(1)<cr>", desc = 'Navigate to file 1' },
-  --     { '<leader>k', "<cmd> lua require('harpoon.ui').nav_file(2)<cr>", desc = 'Navigate to file 2' },
-  --     { '<leader>l', "<cmd> lua require('harpoon.ui').nav_file(3)<cr>", desc = 'Navigate to file 3' },
-  --     { '<leader>;', "<cmd> lua require('harpoon.ui').nav_file(4)<cr>", desc = 'Navigate to file 4' },
-  --   },
-  -- },
+
   {
     'voldikss/vim-floaterm',
     keys = {
       { '<leader>lz', '<cmd> FloatermNew --width=1.00 --height=1.00 lazygit<CR>', mode = 'n', desc = 'Toggle lazygit' },
     },
   },
+
   {
     'folke/zen-mode.nvim',
     opts = {
@@ -182,9 +102,10 @@ require('lazy').setup({
       { '<leader>zz', '<cmd>ZenMode<CR>', desc = 'Toggle ZenMode' },
     },
   },
+
   {
     'folke/trouble.nvim',
-    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    opts = {},
     cmd = 'Trouble',
     keys = {
       {
@@ -219,12 +140,14 @@ require('lazy').setup({
       },
     },
   },
+
   {
     'github/copilot.vim',
     config = function()
       vim.g.copilot_enabled = false
     end,
   },
+
   {
     'folke/noice.nvim',
     event = 'VeryLazy',
@@ -268,6 +191,7 @@ require('lazy').setup({
       },
     },
   },
+
   {
     'nvim-tree/nvim-tree.lua',
     config = function()
@@ -278,57 +202,13 @@ require('lazy').setup({
       { '<C-n>', '<cmd>NvimTreeFindFile<CR>', desc = 'Find file in NvimTree' },
     },
   },
+
   {
     'vhyrro/luarocks.nvim',
     priority = 1000,
     config = true,
   },
-  -- {
-  --   'nvim-neorg/neorg',
-  --   dependencies = { 'luarocks.nvim' },
-  --   lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-  --   version = '*', -- Pin Neorg to the latest stable release
-  --   config = true,
-  --   opts = {
-  --     load = {
-  --       ['core.defaults'] = {},
-  --       ['core.completion'] = { config = { engine = 'nvim-cmp', name = '[Norg]' } },
-  --       ['core.integrations.nvim-cmp'] = {},
-  --       ['core.concealer'] = {
-  --         config = {
-  --           icon_preset = 'diamond',
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
+}
 
-  -- Hardtime.nvim
-  -- {
-  --   'm4xshen/hardtime.nvim',
-  --   dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-  --   opts = {},
-  -- },
-}, {
-  ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
-  },
-})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

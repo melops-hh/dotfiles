@@ -73,7 +73,6 @@ vim.opt.scrolloff = 10
 vim.wo.wrap = false
 
 -- Folds
--- vim.opt.foldmethod = 'indent'
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldenable = false
