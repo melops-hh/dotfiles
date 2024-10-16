@@ -1,6 +1,7 @@
 return {
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
+    event = 'VeryLazy',
     opts = {
       signs = {
         add = { text = '+' },
@@ -14,6 +15,7 @@ return {
 
   {
     'tpope/vim-fugitive',
+    event = 'VeryLazy',
     keys = {
       { '<leader>gs', '<cmd>G<cr>', desc = '[G]it [S]tatus' },
       { '<leader>gc', '<cmd>G commit<cr>', desc = '[G]it [C]ommit' },
@@ -34,5 +36,10 @@ return {
   { -- Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
     'sindrets/diffview.nvim',
     event = 'VeryLazy',
+    keys = {
+      { '<leader>do', '<cmd>DiffviewOpen<cr>', desc = '[D]iffview [O]pen' },
+      { '<leader>dc', '<cmd>DiffviewClose<cr>', desc = '[D]iffview [C]lose' },
+      { '<leader>dfh', '<cmd>DiffviewFileHistory %<cr>', desc = '[D]iffview [F]ile [H]istory' },
+    },
   },
 }

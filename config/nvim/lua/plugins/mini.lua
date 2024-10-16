@@ -7,9 +7,7 @@ return {
     --  - ci'  - [C]hange [I]nside [']quote
     'echasnovski/mini.ai',
     event = 'VeryLazy',
-    config = function()
-      require('mini.ai').setup()
-    end,
+    opts = {},
   },
 
   { -- Add/delete/replace surroundings (brackets, quotes, etc.)
@@ -19,25 +17,19 @@ return {
     -- - sr)'  - [S]urround [R]eplace [)] [']
     'echasnovski/mini.surround',
     event = 'VeryLazy',
-    config = function()
-      require('mini.surround').setup()
-    end,
+    opts = {},
   },
 
   { -- Go forward/backward with square brackets
     'echasnovski/mini.bracketed',
     event = 'VeryLazy',
-    config = function()
-      require('mini.bracketed').setup()
-    end,
+    opts = {},
   },
 
   { -- Navigate and manipulate file system
     'echasnovski/mini.files',
     event = 'VeryLazy',
-    config = function()
-      require('mini.files').setup()
-    end,
+    opts = {},
     keys = {
       { '<leader>mf', ':lua MiniFiles.open()<CR>', desc = '[M]ini [F]iles', { noremap = true } },
     },
@@ -47,14 +39,12 @@ return {
     -- Jump to next/previous single character
     'echasnovski/mini.jump',
     event = 'VeryLazy',
-    config = function()
-      require('mini.jump').setup {
-        mappings = {
-          -- disable repeat_jump because it is used by arrow.nvim
-          repeat_jump = '',
-        },
-      }
-    end,
+    opts = {
+      mappings = {
+        -- disable repeat_jump because it is used by arrow.nvim
+        repeat_jump = '',
+      },
+    },
   },
 
   {
