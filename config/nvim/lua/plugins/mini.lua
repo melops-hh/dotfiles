@@ -46,24 +46,4 @@ return {
       },
     },
   },
-
-  {
-    -- Simple and easy statusline.
-    'echasnovski/mini.statusline',
-    event = 'VeryLazy',
-    config = function()
-      local statusline = require 'mini.statusline'
-
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
-
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_filename = function()
-        -- Set filepath: '%' -> relative path, '%:t' -> tail (filename only)
-        return vim.fn.expand '%'
-      end
-    end,
-  },
 }
