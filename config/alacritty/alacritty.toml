@@ -1,31 +1,3 @@
-live_config_reload = true
-
-# [colors.cursor]
-# cursor = "0x5c6370"
-# text = "0x2c323c"
-#
-# [colors.normal]
-# black = "0x2c323c"
-# blue = "0x61afef"
-# cyan = "0x56b6c2"
-# green = "0x98c379"
-# magenta = "0xc678dd"
-# red = "0xe06c75"
-# white = "0x5c6370"
-# yellow = "0xe5c07b"
-#
-# [colors.primary]
-# background = "0x282c34"
-# foreground = "0xabb2bf"
-#
-# [colors.selection]
-# background = "0x3e4452"
-# text = "CellForeground"
-
-import = [
-  # "./catppuccin-latte.toml"
-  "~/.config/alacritty/catppuccin-latte.toml"
-]
 
 [env]
 TERM = "xterm-256color"
@@ -63,4 +35,34 @@ startup_mode = "Windowed"
 [window.padding]
 x = 0
 y = 0
+
+[general]
+live_config_reload = true
+
+# [colors.cursor]
+# cursor = "0x5c6370"
+# text = "0x2c323c"
+#
+# [colors.normal]
+# black = "0x2c323c"
+# blue = "0x61afef"
+# cyan = "0x56b6c2"
+# green = "0x98c379"
+# magenta = "0xc678dd"
+# red = "0xe06c75"
+# white = "0x5c6370"
+# yellow = "0xe5c07b"
+#
+# [colors.primary]
+# background = "0x282c34"
+# foreground = "0xabb2bf"
+#
+# [colors.selection]
+# background = "0x3e4452"
+# text = "CellForeground"
+
+import = [
+  # "./catppuccin-latte.toml"
+  "~/.config/alacritty/catppuccin-latte.toml"
+]
 
