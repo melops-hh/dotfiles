@@ -206,4 +206,8 @@ return {
     priority = 1000,
     config = true,
   },
+
+  { -- Tmux navigation
+    'christoomey/vim-tmux-navigator',
+  },
 }
