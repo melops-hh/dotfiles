@@ -46,4 +46,16 @@ return {
       },
     },
   },
+
+  { -- Minimal and fast statusline module with opinionated default look
+    'echasnovski/mini.statusline',
+    event = 'VeryLazy',
+    opts = {},
+  },
+
+  { -- Minimal and fast autopairs
+    'echasnovski/mini.pairs',
+    event = 'VeryLazy',
+    opts = {},
+  },
 }
