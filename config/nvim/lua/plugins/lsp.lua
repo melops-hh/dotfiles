@@ -22,6 +22,10 @@ return {
         },
       },
       { 'Bilal2453/luvit-meta', lazy = true }, -- optional `vim.uv` typings
+      {
+        'SmiteshP/nvim-navic',
+        opts = {},
+      },
     },
     opts = {
       inlay_hints = {
@@ -114,11 +118,29 @@ return {
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      local navic = require 'nvim-navic'
+
+      local on_attach = function(client, bufnr)
+        if client.server_capabilities.documentSymbolProvider then
+          navic.attach(client, bufnr)
+        end
+      end
+
       local servers = {
-        gopls = {},
-        pyright = {},
-        ts_ls = {},
+        clangd = {
+          on_attach = on_attach,
+        },
+        gopls = {
+          on_attach = on_attach,
+        },
+        pyright = {
+          on_attach = on_attach,
+        },
+        ts_ls = {
+          on_attach = on_attach,
+        },
         lua_ls = {
+          on_attach = on_attach,
           -- cmd = {...},
           -- filetypes = { ...},
           -- capabilities = {},

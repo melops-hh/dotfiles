@@ -77,3 +77,5 @@ vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
+
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
