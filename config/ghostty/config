@@ -1,0 +1,16 @@
+background-blur-radius = 70
+background-opacity = 0.85
+font-family = MesloLGS NF Regular
+font-family-bold = MesloLGS NF Bold
+font-family-bold-italic = MesloLGS NF Bold Italic
+font-family-italic = MesloLGS NF Italic
+font-size = 15
+font-thicken = true
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+# macos-titlebar-style = hidden
+theme = dark:rose-pine,light:catppuccin-latte
+# window-decoration = false
