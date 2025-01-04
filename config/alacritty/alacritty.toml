@@ -62,7 +62,6 @@ live_config_reload = true
 # text = "CellForeground"
 
 import = [
-  # "./catppuccin-latte.toml"
-  "~/.config/alacritty/catppuccin-latte.toml"
+  "./catppuccin-latte.toml"
 ]
 
