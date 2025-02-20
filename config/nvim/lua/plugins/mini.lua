@@ -26,15 +26,6 @@ return {
     opts = {},
   },
 
-  { -- Navigate and manipulate file system
-    'echasnovski/mini.files',
-    event = 'VeryLazy',
-    opts = {},
-    keys = {
-      { '<leader>mf', ':lua MiniFiles.open()<CR>', desc = '[M]ini [F]iles', { noremap = true } },
-    },
-  },
-
   {
     -- Jump to next/previous single character
     'echasnovski/mini.jump',
