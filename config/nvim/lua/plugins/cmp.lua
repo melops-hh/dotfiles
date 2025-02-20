@@ -43,7 +43,7 @@ return {
       completion = {
         -- Show documentation when selecting a completion item
         documentation = { auto_show = true, window = { border = 'single' } },
-        list = { selection = { preselect = false, auto_insert = false } },
+        list = { selection = { preselect = false, auto_insert = true } },
         menu = {
           auto_show = function(ctx)
             -- Don't show completion for search or cmd
