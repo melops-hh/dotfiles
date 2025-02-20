@@ -6,7 +6,6 @@ return {
       {
         'L3MON4D3/LuaSnip',
         version = 'v2.*',
-
         build = 'make install_jsregexp',
         dependencies = {
           {
@@ -15,9 +14,13 @@ return {
               require('luasnip.loaders.from_vscode').lazy_load()
             end,
           },
-          {
-            'giuxtaposition/blink-cmp-copilot',
-          },
+        },
+        {
+          'giuxtaposition/blink-cmp-copilot',
+        },
+        {
+          'Kaiser-Yang/blink-cmp-dictionary',
+          dependencies = { 'nvim-lua/plenary.nvim' },
         },
       },
     },
@@ -37,12 +40,19 @@ return {
       -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
       -- See the full "keymap" documentation for information on defining your own keymap.
       keymap = { preset = 'default' },
+      completion = {
+        -- Show documentation when selecting a completion item
+        documentation = { auto_show = true, window = { border = 'single' } },
+        list = { selection = { preselect = false, auto_insert = false } },
+        menu = {
+          auto_show = function(ctx)
+            -- Don't show completion for search or cmd
+            return ctx.mode ~= 'cmdline' or not vim.tbl_contains({ '/', '?' }, vim.fn.getcmdtype())
+          end,
+        },
+      },
 
       appearance = {
-        -- Sets the fallback highlight groups to nvim-cmp's highlight groups
-        -- Useful for when your theme doesn't support blink.cmp
-        -- Will be removed in a future release
-        -- use_nvim_cmp_as_default = true,
         -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         -- Adjusts spacing to ensure icons are aligned
         nerd_font_variant = 'mono',
@@ -81,17 +91,20 @@ return {
         },
       },
 
-      -- Default list of enabled providers defined so that you can extend it
-      -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', 'copilot' },
-
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', 'copilot', 'dictionary' },
         providers = {
+          lsp = {
+            name = 'lsp',
+            enabled = true,
+            module = 'blink.cmp.sources.lsp',
+            score_offset = 100,
+          },
           copilot = {
             name = 'copilot',
             module = 'blink-cmp-copilot',
-            -- score_offset = 90,
             async = true,
+            score_offset = 10,
             transform_items = function(_, items)
               local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
               local kind_idx = #CompletionItemKind + 1
@@ -104,12 +117,43 @@ return {
           },
           lazydev = {
             name = 'LazyDev',
+            enabled = true,
             module = 'lazydev.integrations.blink',
             -- make lazydev completions top priority (see `:h blink.cmp`)
-            score_offset = 100,
+            score_offset = 90,
+          },
+          dictionary = {
+            -- make sure wordnet ($wn) is installed
+            module = 'blink-cmp-dictionary',
+            enabled = true,
+            name = 'Dict',
+            min_keyword_length = 3,
+            max_items = 8,
+            score_offset = 20,
+            --- @module 'blink-cmp-dictionary'
+            --- @type blink-cmp-dictionary.Options
+            opts = {
+              get_command = 'rg',
+              get_command_args = function(prefix)
+                return {
+                  '--color=never',
+                  '--no-line-number',
+                  '--no-messages',
+                  '--no-filename',
+                  '--ignore-case',
+                  '--',
+                  prefix,
+                  vim.fn.expand '~/Repos/melops/dotfiles/dictionaries/words',
+                }
+              end,
+            },
           },
         },
       },
+      snippets = {
+        preset = 'luasnip',
+      },
+      signature = { enabled = true },
     },
     opts_extend = { 'sources.default' },
   },
