@@ -39,7 +39,7 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
       require('treesitter-context').setup {
-        enable = false,
+        enable = true,
       }
 
       vim.keymap.set('n', '<leader>ct', '<cmd>TSContextToggle<cr>', { desc = 'Treesitter [C]ontext [T]oggle' })
