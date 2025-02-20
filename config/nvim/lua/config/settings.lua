@@ -73,9 +73,10 @@ vim.opt.scrolloff = 10
 vim.wo.wrap = false
 
 -- Folds
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldenable = false
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldtext = ''
 vim.opt.foldlevel = 99
+vim.opt.foldnestmax = 4
 
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
