@@ -1,14 +1,12 @@
 return {
   {
     'saghen/blink.cmp',
-    -- optional: provides snippets for the snippet source
     dependencies = {
       {
-        'L3MON4D3/LuaSnip',
-        version = 'v2.*',
-        build = 'make install_jsregexp',
-        dependencies = {
-          {
+        {
+          'L3MON4D3/LuaSnip',
+          version = 'v2.*',
+          dependencies = {
             'rafamadriz/friendly-snippets',
             config = function()
               require('luasnip.loaders.from_vscode').lazy_load()
@@ -147,6 +145,14 @@ return {
                 }
               end,
             },
+          },
+          snippets = {
+            name = 'snippets',
+            enabled = true,
+            max_items = 3,
+            module = 'blink.cmp.sources.snippets',
+            min_keyword_length = 2,
+            score_offset = 85,
           },
         },
       },
