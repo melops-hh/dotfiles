@@ -38,9 +38,16 @@ return {
         end,
         desc = 'Smart Find Files',
       },
+      {
+        '<leader>fb',
+        function()
+          Snacks.picker.buffers()
+        end,
+        desc = 'Buffers',
+      },
       -- Grep
       {
-        '<leader>sb',
+        '<leader>sbl',
         function()
           Snacks.picker.lines()
         end,
@@ -83,7 +90,7 @@ return {
         desc = 'Notification History',
       },
       {
-        '<leader>e',
+        '<C-b>',
         function()
           Snacks.explorer()
         end,
@@ -147,7 +154,7 @@ return {
         desc = 'Goto Declaration',
       },
       {
-        'gr',
+        '<leader>gr',
         function()
           Snacks.picker.lsp_references()
         end,
@@ -256,7 +263,7 @@ return {
         desc = 'Toggle Zoom',
       },
       {
-        '<leader>.',
+        '<leader>sb',
         function()
           Snacks.scratch()
         end,
