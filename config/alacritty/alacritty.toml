@@ -30,6 +30,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 dynamic_padding = true
 opacity = 1
 startup_mode = "Windowed"
+option_as_alt =  "OnlyLeft"
 # draw_bold_text_with_bright_colors = true
 
 [window.padding]
