@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.g.python3_host_prog = os.getenv("HOME") .. "/.virtualenvs/nvim/bin/python"
+vim.o.laststatus = 2
