@@ -3,6 +3,7 @@
 )
 
 (defsrc
+  e   t
   caps a   s   d   f   h   j   k   l   ;
 )
 
@@ -25,14 +26,17 @@
   )
 )
 (deflayer base
+  e  t
   @caps  @a  @s  @d  @f  h  @j  @k  @l  @;
 )
 
 (deflayer nomods
+  e   t
   caps   a   s   d   f   h   j   k   l   ;
 )
 
 (deflayer arrows
+  e   t
   caps   a   s   d   f   left   down   up   right   ;
 )
 
