@@ -3,6 +3,7 @@
 )
 
 (defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   e   t
   caps a   s   d   f   h   j   k   l   ;
 )
@@ -26,16 +27,19 @@
   )
 )
 (deflayer base
+  esc  🔅   🔆    ✗    ✗    ✗    ✗    ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
   e  t
   @caps  @a  @s  @d  @f  h  @j  @k  @l  @;
 )
 
 (deflayer nomods
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   e   t
   caps   a   s   d   f   h   j   k   l   ;
 )
 
 (deflayer arrows
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   e   t
   caps   a   s   d   f   left   down   up   right   ;
 )
