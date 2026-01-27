@@ -29,13 +29,9 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 [window]
 dynamic_padding = true
 opacity = 1
-startup_mode = "Windowed"
 option_as_alt =  "OnlyLeft"
-# draw_bold_text_with_bright_colors = true
-
-[window.padding]
-x = 0
-y = 0
+padding = { x = 0, y = 0 }
+startup_mode = "Windowed"
 
 [general]
 live_config_reload = true
@@ -63,6 +59,7 @@ live_config_reload = true
 # text = "CellForeground"
 
 import = [
-  "./catppuccin-latte.toml"
+  # "./catppuccin-latte.toml"
+  "./catppuccin-macchiato.toml"
 ]
 
