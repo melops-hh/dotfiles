@@ -1,5 +1,5 @@
 -- map kj to ESC
--- vim.keymap.set("i", "kj", "<ESC>", { silent = true })
+vim.keymap.set("i", "kj", "<ESC>", { silent = true })
 
 -- quick safe file
 vim.keymap.set("n", ",,", ":w <CR>")
