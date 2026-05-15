@@ -8,7 +8,6 @@ return {
         ["<CR>"] = { "fallback" },
       },
       completion = {
-        enabled = false, -- disables automatic completion
         ghost_text = {
           enabled = false,
         },
